@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Test.TestJunit" time="1.984" tests="5" errors="0" skipped="0" failures="2">
+  <properties>
+    <property name="java.specification.version" value="16"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer\target\test-classes;G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer\target\classes;C:\Users\savin\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet-core\3.0.3\jersey-container-servlet-core-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.0\jakarta.inject-api-2.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-common\3.0.3\jersey-common-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.0.0\jakarta.annotation-api-2.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\osgi-resource-locator\1.0.3\osgi-resource-locator-1.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-server\3.0.3\jersey-server-3.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-client\3.0.3\jersey-client-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\savin\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.0.0\jakarta.ws.rs-api-3.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\inject\jersey-hk2\3.0.3\jersey-hk2-3.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-locator\3.0.1\hk2-locator-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\external\aopalliance-repackaged\3.0.1\aopalliance-repackaged-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-api\3.0.1\hk2-api-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-utils\3.0.1\hk2-utils-3.0.1.jar;C:\Users\savin\.m2\repository\org\javassist\javassist\3.25.0-GA\javassist-3.25.0-GA.jar;C:\Users\savin\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\savin\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\savin\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\savin\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\savin\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\savin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Colombo"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="16"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\savin\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\savin\AppData\Local\Temp\surefire12517773825321186612\surefirebooter9347648549409107553.jar C:\Users\savin\AppData\Local\Temp\surefire12517773825321186612 2021-10-25T21-17-41_556-jvmRun1 surefire10658786906833913822tmp surefire_010667186976005869195tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer\target\test-classes;G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer\target\classes;C:\Users\savin\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet-core\3.0.3\jersey-container-servlet-core-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.0\jakarta.inject-api-2.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-common\3.0.3\jersey-common-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.0.0\jakarta.annotation-api-2.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\osgi-resource-locator\1.0.3\osgi-resource-locator-1.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-server\3.0.3\jersey-server-3.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\core\jersey-client\3.0.3\jersey-client-3.0.3.jar;C:\Users\savin\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\savin\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.0.0\jakarta.ws.rs-api-3.0.0.jar;C:\Users\savin\.m2\repository\org\glassfish\jersey\inject\jersey-hk2\3.0.3\jersey-hk2-3.0.3.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-locator\3.0.1\hk2-locator-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\external\aopalliance-repackaged\3.0.1\aopalliance-repackaged-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-api\3.0.1\hk2-api-3.0.1.jar;C:\Users\savin\.m2\repository\org\glassfish\hk2\hk2-utils\3.0.1\hk2-utils-3.0.1.jar;C:\Users\savin\.m2\repository\org\javassist\javassist\3.25.0-GA\javassist-3.25.0-GA.jar;C:\Users\savin\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\savin\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\savin\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\savin\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\savin\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\savin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\savin"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-07-20"/>
+    <property name="java.home" value="C:\Users\savin\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\savin\AppData\Local\Temp\surefire12517773825321186612\surefirebooter9347648549409107553.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="16.0.2+7-67"/>
+    <property name="user.name" value="savin"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\savin\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\savin\AppData\Local\Temp\"/>
+    <property name="java.version" value="16.0.2"/>
+    <property name="user.dir" value="G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\savin\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/savin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149/jre/bin/server;C:/Users/savin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\nodejs\;C:\Program Files\Java\jdk-16.0.1\bin;D:\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Users\savin\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\savin\AppData\Roaming\npm;C:\Users\savin\AppData\Local\GitHubDesktop\bin;D:\heroku\bin;C:\Users\savin\.dotnet\tools;C:\Windows\system32;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="16.0.2+7-67"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="60.0"/>
+  </properties>
+  <testcase name="testDatabaseConnectionConnected" classname="Test.TestJunit" time="0.828"/>
+  <testcase name="testLogin" classname="Test.TestJunit" time="0.107">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<true> but was:<false>
+	at Test.TestJunit.testLogin(TestJunit.java:79)
+]]></failure>
+    <system-out><![CDATA[if 1search-false
+]]></system-out>
+  </testcase>
+  <testcase name="testRegistration" classname="Test.TestJunit" time="0.653"/>
+  <testcase name="testLoginDelete" classname="Test.TestJunit" time="0.251"/>
+  <testcase name="testLoginUpdate" classname="Test.TestJunit" time="0.011">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<true> but was:<false>
+	at Test.TestJunit.testLoginUpdate(TestJunit.java:73)
+]]></failure>
+  </testcase>
+</testsuite>

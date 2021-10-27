@@ -1,0 +1,4 @@
+# Created at 2021-10-25T21:17:42.319
+Boot Manifest-JAR contains absolute paths in classpath 'G:\ICBT HNDC MODULES\21 ICBT DIGREE BSC HONS SOFTWARE ENGINEER\1-Advanced-programming\fullproject\HospitalRestServer\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

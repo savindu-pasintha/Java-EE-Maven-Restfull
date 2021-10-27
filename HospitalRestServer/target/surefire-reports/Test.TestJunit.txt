@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: Test.TestJunit
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.984 s <<< FAILURE! - in Test.TestJunit
+Test.TestJunit.testLogin  Time elapsed: 0.107 s  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at Test.TestJunit.testLogin(TestJunit.java:79)
+
+Test.TestJunit.testLoginUpdate  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at Test.TestJunit.testLoginUpdate(TestJunit.java:73)
+
