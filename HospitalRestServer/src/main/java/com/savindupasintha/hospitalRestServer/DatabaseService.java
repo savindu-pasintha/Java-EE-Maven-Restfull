@@ -173,26 +173,22 @@ public class DatabaseService {
 	public Response getDoctorJobRegistration(@PathParam("first") String first, @PathParam("last") String last,
 			@PathParam("mobile") String mobile, @PathParam("email") String email, @PathParam("city") String city,
 			@PathParam("collage") String collage, @PathParam("digree") String digree,
-			@PathParam("medicalcetificateid") String mcid, @PathParam("specification") String spc) {
+			@PathParam("medicalcetificateid") String mcid, @PathParam("specification") String spc) throws SQLException, ClassNotFoundException {
 		boolean valid = false;
 		if (first != null && spc != null && last != null && mobile != null && email != null) {
+			JobRegistrationModel jo = new JobRegistrationModel();
+			jo.setId(0);
+			jo.setFirst(first);
+			jo.setLast(last);
+			jo.setMobile(mobile);
+			jo.setEmail(email);
+			jo.setCity(city);
+			jo.setCollage(collage);
+			jo.setDigree(digree);
+			jo.setMcid(mcid);
+			jo.setSpc(spc);
 			try {
-				JobRegistrationModel jo = new JobRegistrationModel();
-				jo.setId(0);
-				jo.setFirst(first);
-				jo.setLast(last);
-				jo.setMobile(mobile);
-				jo.setEmail(email);
-				jo.setCity(city);
-				jo.setCollage(collage);
-				jo.setDigree(digree);
-				jo.setMcid(mcid);
-				jo.setSpc(spc);
-				try {
-					valid = new JobRegistration().add(jo);
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				valid = new JobRegistration().add(jo);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}

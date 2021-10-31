@@ -123,16 +123,22 @@ async function updateFunction(url) {
 	           }
 
 </script>
-
-
 <body>
+
 	<div id="top">
 		<jsp:include page="./navigation.jsp" />
 	</div>
+	<div class="container"  id="bottom">
+		<div class="row">
+			<div class="col-6 text-center"><h3 style="color:blue;">UPDATE</h3></div>
+			<div class="col-6 text-center"><h3 style="color:red;">DELETE</h3></div>
+		</div>
+	</div>
+	<%
+	if (false) {
+	%>
 	<div id="bottom">
-
 		<table class="table table-primary">
-
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -145,51 +151,53 @@ async function updateFunction(url) {
 				</tr>
 			</thead>
 			<tbody>
-
-
 				<%
 				ArrayList<LoginModel> al = new ArrayList<LoginModel>();
+				String method = "post";
 				al = new Login().read();
 				if (al.size() != 0) {
 					for (int i = 0; i < al.size(); i++) {
 				%>
-
 				<tr>
-					<form action="Users" method="POST" target="_blank" onsubmit="preventDefault();">
-					<th scope="row"><input disabled
-						value="<%out.print(al.get(i).getId());%>" />
-						<input hidden name="id"
-						value="<%out.print(al.get(i).getUsername());%>" />
-						</th>
-					
-					<td><input id="<%out.print(Integer.toString(i));%>"
-						name="username" value="<%out.print(al.get(i).getUsername());%>" />
-					</td>
-					
-					<td><input id="<%out.print(Integer.toString(i) + "p");%>"
-						 name="password"
-						value="<%out.print(al.get(i).getPassword());%>" /></td>
-					<td>
-						<%
-						out.print(al.get(i).getTimestamp());
-						%>
-					</td>
-					
-					<td> <i
-						id="<%out.print(Integer.toString(i) + "abc");%>"
-						class="fa fa-edit"></i></td>
+					<form action="Users" method="<%out.print(method);%>"
+						target="_blank" onsubmit="preventDefault();">
+						<th scope="row"><input disabled
+							value="<%out.print(al.get(i).getId());%>" /> <input hidden
+							name="id" 
+							value="<%out.print(al.get(i).getUsername());%>" /></th>
 
-					<td>
-					<button type="submit"  id="save" name="save" value="save">
-					<i onclick="save('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-save"></i>
-						</button>
+						<td><input id="<%out.print(Integer.toString(i));%>"
+							name="username" 
+							value="<%out.print(al.get(i).getUsername());%>" />
 						</td>
-					<td>
-					<button type="submit" id="delete" name="delete" value="delete" >
-					<i onclick="delet('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-trash"></i>
-						</button>
+
+						<td><input id="<%out.print(Integer.toString(i) + "p");%>"
+							name="password" 
+							value="<%out.print(al.get(i).getPassword());%>" /></td>
+						<td>
+							<%
+							out.print(al.get(i).getTimestamp());
+							%>
+						</td>
+
+						<td><i id="<%out.print(Integer.toString(i) + "abc");%>"
+							class="fa fa-edit"></i></td>
+
+						<td>
+							<button 
+							type="submit" 
+							id="save" 
+							name="save" 
+							value="save">
+								<i onclick="save('<%out.print(Integer.toString(i));%>');"
+									class="fa fa-save"></i>
+							</button>
+						</td>
+						<td>
+							<button type="submit" id="delete" name="delete" value="delete">
+								<i onclick="delet('<%out.print(Integer.toString(i));%>');"
+									class="fa fa-trash"></i>
+							</button>
 						</td>
 					</form>
 				</tr>
@@ -201,5 +209,9 @@ async function updateFunction(url) {
 			</tbody>
 		</table>
 	</div>
+	<%
+	}
+	%>
 </body>
+
 </html>

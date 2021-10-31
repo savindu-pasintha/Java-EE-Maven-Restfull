@@ -156,6 +156,8 @@ async function deleteFunction(deleteId) {
 						disabled value="<%out.print(al.get(i).getName());%>" /></td>
 					<td><input id="<%out.print(Integer.toString(i) + "p");%>"
 						disabled value="<%out.print(al.get(i).getLocation());%>" /></td>
+
+
 					<td><i
 						onclick="toggleEnable('<%out.print(Integer.toString(i));%>');"
 						class="fa fa-edit"></i></td>

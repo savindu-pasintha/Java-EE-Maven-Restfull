@@ -135,8 +135,7 @@ async function deleteFunction(deleteId) {
 					<th scope="col">Code</th>
 					<th scope="col">Center_Name</th>
 					<th scope="col">Location</th>
-					<th scope="col">E</th>
-					<th scope="col">S</th>
+					
 					<th scope="col">D</th>
 				</tr>
 			</thead>
@@ -148,6 +147,7 @@ async function deleteFunction(deleteId) {
 					for (int i = 0; i < al.size(); i++) {
 				%>
 				<tr>
+					<form method="post" action="center">
 					<th scope="row"><input disabled value="<%out.print(i);%>" />
 					</th>
 					<td><input id="<%out.print(Integer.toString(i));%>" disabled
@@ -156,14 +156,9 @@ async function deleteFunction(deleteId) {
 						disabled value="<%out.print(al.get(i).getName());%>" /></td>
 					<td><input id="<%out.print(Integer.toString(i) + "p");%>"
 						disabled value="<%out.print(al.get(i).getLocation());%>" /></td>
-					<td><i
-						onclick="toggleEnable('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-edit"></i></td>
-					<td><i onclick="save('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-save"></i></td>
-					<td><i
-						onclick="delet('<%out.print(Integer.toString(i));%>','<%out.print(al.get(i).getId());%>');"
-						class="fa fa-trash"></i></td>
+					<td>
+					<button type="submit" id="delete" name="delete" value="delete"><i class="fa fa-trash"></i></button></td>
+		      </form>
 				</tr>
 				<%
 				}

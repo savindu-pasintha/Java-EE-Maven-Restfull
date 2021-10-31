@@ -192,6 +192,7 @@ public class TestJunit {
 	}
 
 	/* Centers CRUD */
+	
 	@Test
 	public void testCentersAdd() throws ClassNotFoundException, SQLException {
 		CentersModel obj = new CentersModel();
@@ -212,8 +213,7 @@ public class TestJunit {
 		assertEquals(true, new Centers().delete("1"));
 	}
 
-	/* Medical Package CRUD*/
-
+	/* Medical Package CRUD */
 	@Test
 	public void testMedicalPackagesAdd() throws ClassNotFoundException, SQLException {
 		MedicalPackagesModel obj = new MedicalPackagesModel();

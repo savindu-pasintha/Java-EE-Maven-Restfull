@@ -1,4 +1,4 @@
-<%@ page import="modelsPkg.*"%>
+<%@ page import="modelsPkg.LoginModel"%>
 <%@ page import="databasePkg.*"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -8,7 +8,7 @@
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Centers</title>
+<title>USERS</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -17,7 +17,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-
 <style>
 #top {
 	width: auto;
@@ -40,22 +39,27 @@ i:hover {
 <script type="text/javascript"
 	src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
-function toggleEnable(tagId) {
+
+var cl = document.getElementById("0abc");
+cl.addEventListener('click',toogleEnable("10"), false);
+
+async function toggleEnable(tagId) {
+	console.log(tagId.toString());
     document.getElementById(tagId.toString()).disabled = false;
     document.getElementById(tagId.toString()+"p").disabled = false;
-    document.getElementById(tagId.toString()+"n").disabled = false;
 }
 function save(tagId) {
+	console.log(tagId.toString());
     document.getElementById(tagId.toString()).disabled = true;
     document.getElementById(tagId.toString()+"p").disabled = true;
-    document.getElementById(tagId.toString()+"n").disabled = true;
 }
-function delet(this.tagId,this.Id) {
-	deleteFunction(Id);
+async function delet(tagId) {
+	var id = getElementById(tagId.toString()).value;
+	await deleteFunction(id);
     document.getElementById(tagId.toString()).disabled = true;
     document.getElementById(tagId.toString()+"p").disabled = true;
-    document.getElementById(tagId.toString()+"n").disabled = true;
 }
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function updateFunction(url) {  
@@ -66,7 +70,7 @@ async function updateFunction(url) {
                        dataType: 'json'
                 };
 	           var url='http://localhost:8080/HospitalRestServer/webapi/database/user/';
-               await fetch(url+username+"/"+password+"/"+id, options)
+               fetch(url+username+"/"+password+"/"+id, options)
                .then(function(response) {
             	      return response.json();
             	    }).then(function(data) {
@@ -81,14 +85,14 @@ async function updateFunction(url) {
             	    });
                
             }
-async function deleteFunction(deleteId) {  
+ function deleteFunction(deleteId) {  
 	const options = {
                        method: "DELETE",
                        headers: new Headers({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
                        mode: 'no-cors',
                        dataType: 'json'
                 };
-	           var url =  const url='http://localhost:8080/HospitalRestServer/webapi/database/user/';
+	           var url ='http://localhost:8080/HospitalRestServer/webapi/database/user/';
 	           swal({
 	        	   title: "Are you sure?",
 	        	   text: "Once deleted, you will not be able to recover this record file!",
@@ -98,8 +102,7 @@ async function deleteFunction(deleteId) {
 	        	 })
 	        	 .then((willDelete) => {
 	        	   if (willDelete) {
-	        		   
-	        		   await fetch(url+deleteId, options)
+	        		    fetch(url+deleteId, options)
 	                   .then(function(response) {
 	                	      return response.json();
 	                	    }).then(function(data) {
@@ -112,7 +115,6 @@ async function deleteFunction(deleteId) {
 	                	    	 swal("Your record file is safe!");
 	                	     }
 	                	    });
-	        		   
 	        	    
 	        	   } else {
 	        	     swal("Your record file is safe!");
@@ -121,20 +123,28 @@ async function deleteFunction(deleteId) {
 	           }
 
 </script>
-
-
 <body>
+
 	<div id="top">
 		<jsp:include page="./navigation.jsp" />
 	</div>
+	<div class="container"  id="bottom">
+		<div class="row">
+			<div class="col-6 text-center"><h3 style="color:blue;">UPDATE</h3></div>
+			<div class="col-6 text-center"><h3 style="color:red;">DELETE</h3></div>
+		</div>
+	</div>
+	<%
+	if (false) {
+	%>
 	<div id="bottom">
 		<table class="table table-primary">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Code</th>
-					<th scope="col">Center_Name</th>
-					<th scope="col">Location</th>
+					<th scope="col">User_Name</th>
+					<th scope="col">Password</th>
+					<th scope="col">Timestamp</th>
 					<th scope="col">E</th>
 					<th scope="col">S</th>
 					<th scope="col">D</th>
@@ -142,29 +152,49 @@ async function deleteFunction(deleteId) {
 			</thead>
 			<tbody>
 				<%
-				ArrayList<CentersModel> al = new ArrayList<CentersModel>();
-				al = new Centers().read();
+				ArrayList<LoginModel> al = new ArrayList<LoginModel>();
+				String method = "post";
+				al = new Login().read();
 				if (al.size() != 0) {
 					for (int i = 0; i < al.size(); i++) {
 				%>
 				<tr>
-					<th scope="row"><input disabled value="<%out.print(i);%>" />
-					</th>
-					<td><input id="<%out.print(Integer.toString(i));%>" disabled
-						value="<%out.print(al.get(i).getId());%>" /></td>
-					<td><input id="<%out.print(Integer.toString(i) + "n");%>"
-						disabled value="<%out.print(al.get(i).getName());%>" /></td>
-					<td><input id="<%out.print(Integer.toString(i) + "p");%>"
-						disabled value="<%out.print(al.get(i).getLocation());%>" /></td>
-					<td><i
-						onclick="toggleEnable('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-edit"></i></td>
-					<td><i onclick="save('<%out.print(Integer.toString(i));%>');"
-						class="fa fa-save"></i></td>
-					<td><i
-						onclick="delet('<%out.print(Integer.toString(i));%>','<%out.print(al.get(i).getId());%>');"
-						class="fa fa-trash"></i></td>
+					<form action="Users" method="<%out.print(method);%>"
+						target="_blank" onsubmit="preventDefault();">
+						<th scope="row"><input disabled
+							value="<%out.print(al.get(i).getId());%>" /> <input hidden
+							name="id" value="<%out.print(al.get(i).getUsername());%>" /></th>
+
+						<td><input id="<%out.print(Integer.toString(i));%>"
+							name="username" value="<%out.print(al.get(i).getUsername());%>" />
+						</td>
+
+						<td><input id="<%out.print(Integer.toString(i) + "p");%>"
+							name="password" value="<%out.print(al.get(i).getPassword());%>" /></td>
+						<td>
+							<%
+							out.print(al.get(i).getTimestamp());
+							%>
+						</td>
+
+						<td><i id="<%out.print(Integer.toString(i) + "abc");%>"
+							class="fa fa-edit"></i></td>
+
+						<td>
+							<button type="submit" id="save" name="save" value="save">
+								<i onclick="save('<%out.print(Integer.toString(i));%>');"
+									class="fa fa-save"></i>
+							</button>
+						</td>
+						<td>
+							<button type="submit" id="delete" name="delete" value="delete">
+								<i onclick="delet('<%out.print(Integer.toString(i));%>');"
+									class="fa fa-trash"></i>
+							</button>
+						</td>
+					</form>
 				</tr>
+
 				<%
 				}
 				}
@@ -172,5 +202,9 @@ async function deleteFunction(deleteId) {
 			</tbody>
 		</table>
 	</div>
+	<%
+	}
+	%>
 </body>
+
 </html>
