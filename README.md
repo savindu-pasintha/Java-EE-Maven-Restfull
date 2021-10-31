@@ -1,0 +1,2 @@
+# Java-EEJAVA-Maven-Restful-Project-JDBC-GSON-JERSEY-OKHTTP-DESIGN-PATTERN
+
